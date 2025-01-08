@@ -5,10 +5,11 @@ import Header from "./components/Header";
 
 function App() {
   const storedBestScore = localStorage.getItem("bestScoreStoraged");
+  const storedBestScoreInt = parseInt(storedBestScore) + 1;
   const [cards, setCards] = useState([]);
   const [clickedCards, setClickedCards] = useState([]);
   const [currentScore, setCurrentScore] = useState(0);
-  const [bestScore, setBestScore] = useState(storedBestScore || 0);
+  const [bestScore, setBestScore] = useState(storedBestScoreInt || 0);
 
   const handleClick = (cardId) => {
     if (clickedCards.includes(cardId)) {
